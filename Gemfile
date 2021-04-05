@@ -65,3 +65,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #Mysql Gem
 gem 'mysql2', '~> 0.5.3'
+
+gem 'rubocop', '~> 1.11', require: false
