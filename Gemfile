@@ -71,3 +71,6 @@ gem 'rubocop', '~> 1.11', require: false
 gem 'bootstrap', '~> 5.0.0.beta2'
 
 gem 'pagy', '~> 3.5'
+
+gem 'faker', '~> 2.17'
+gem 'rubocop-faker'
