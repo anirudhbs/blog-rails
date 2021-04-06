@@ -2,9 +2,10 @@
 
 <h1>Articles</h1>
 
-<table class="table">
+<table id="records_table" class="table">
   <thead>
     <tr>
+      <th>#</th>
       <th>Title</th>
       <th>Body</th>
       <th>Actions</th>
@@ -12,22 +13,12 @@
   </thead>
 
   <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.body %></td>
-        <td>
-          <%= link_to 'Show', article %>
-          <%= link_to 'Edit', edit_article_path(article) %>
-          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
+    <%= render partial: 'page_items' %>
   </tbody>
 </table>
 
-<%== pagy_nav(@pagy) %>
-
-<br>
+<div id="div_next_link">
+  <%= render partial: 'next_link' %>
+</div>
 
 <%= link_to 'New Article', new_article_path %>

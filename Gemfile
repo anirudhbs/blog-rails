@@ -74,3 +74,4 @@ gem 'pagy', '~> 3.5'
 
 gem 'faker', '~> 2.17'
 gem 'rubocop-faker'
+gem 'jquery-rails'
