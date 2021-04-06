@@ -69,3 +69,5 @@ gem 'mysql2', '~> 0.5.3'
 gem 'rubocop', '~> 1.11', require: false
 
 gem 'bootstrap', '~> 5.0.0.beta2'
+
+gem 'pagy', '~> 3.5'
