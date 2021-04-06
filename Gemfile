@@ -67,3 +67,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mysql2', '~> 0.5.3'
 
 gem 'rubocop', '~> 1.11', require: false
+
+gem 'bootstrap', '~> 5.0.0.beta2'
