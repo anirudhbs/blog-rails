@@ -76,3 +76,6 @@ gem 'jquery-rails'
 
 # For tests
 gem 'rspec-rails'
+
+# To add test data for integration tests
+gem 'factory_bot'
