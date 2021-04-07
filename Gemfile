@@ -79,3 +79,6 @@ gem 'rspec-rails'
 
 # To add test data for integration tests
 gem 'factory_bot'
+
+#Handle authentication
+gem 'devise'
