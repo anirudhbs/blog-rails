@@ -1,12 +1,14 @@
 <% @articles.each do |article| %>
-      <tr>
-        <td scope="row"><%= article.id %></th>
-        <td><%= article.title %></td>
-        <td><%= article.body %></td>
-        <td>
-          <%= link_to 'Show', article %>
-          <%= link_to 'Edit', edit_article_path(article) %>
-          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
+<tr>
+  <td scope="row"><%= article.id %></th>
+  <td><%= article.title %></td>
+  <td><%= article.body %></td>
+  <td>
+    <%= link_to 'Show', article %>
+    <% if article.id == current_user.id %>
+    <%= link_to 'Edit', edit_article_path(article) %>
+    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
+  </td>
+</tr>
+<% end %>
