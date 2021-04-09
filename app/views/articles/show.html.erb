@@ -10,6 +10,11 @@
   <%= @article.body %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @article.user.email %>
+</p>
+
 <h2>Comments</h2>
 <%= render @article.comments %>
 
