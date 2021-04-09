@@ -11,6 +11,15 @@
 </p>
 
 <p>
+  <strong>Attachment:</strong>
+  <% if @article.attachment.exists?(:thumb) %>
+    <%= image_tag @article.attachment.url(:thumb) %>
+  <% else %>
+    <%= image_tag @article.attachment.url(:original) %>
+  <% end %>
+</p>
+
+<p>
   <strong>User:</strong>
   <%= @article.user.email %>
 </p>
