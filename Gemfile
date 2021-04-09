@@ -82,3 +82,5 @@ gem 'factory_bot'
 
 #Handle authentication
 gem 'devise'
+
+gem 'paperclip', '~> 6.0.0'
