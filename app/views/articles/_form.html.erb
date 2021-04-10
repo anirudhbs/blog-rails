@@ -21,7 +21,7 @@
     <%= form.text_area :body %>
   </div>
 
-  <%= form.file_field :attachment %>
+  <%= form.file_field :attachments, multiple: true %>
 
   <div class="actions">
     <%= form.submit %>
