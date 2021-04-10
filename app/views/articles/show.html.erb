@@ -12,10 +12,8 @@
 
 <p>
   <strong>Attachment:</strong>
-  <% if @article.attachment.exists?(:thumb) %>
-    <%= image_tag @article.attachment.url(:thumb) %>
-  <% else %>
-    <%= image_tag @article.attachment.url(:original) %>
+  <% @article.attachments.each do |attachment|%>
+    <%= image_tag attachment.variant(resize: '100x100') %>
   <% end %>
 </p>
 

@@ -84,3 +84,6 @@ gem 'factory_bot'
 gem 'devise'
 
 gem 'paperclip', '~> 6.0.0'
+
+# Rails 5.2 Active storage requires it to transform images/files
+gem 'mini_magick'
