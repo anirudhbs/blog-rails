@@ -36,6 +36,7 @@
   <%= form.file_field :attachments, multiple: true %>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Save as drafts' %>
+    <%= form.submit 'Submit', name: 'state' %>
   </div>
 <% end %>

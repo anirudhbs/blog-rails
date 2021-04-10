@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user_id = current_user.id
+    @article.submitting if params[:state] == 'Submit'
 
     respond_to do |format|
       if @article.save
@@ -35,6 +36,8 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     respond_to do |format|
+      @article.submitting if params[:state] == 'Submit'
+
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
       else

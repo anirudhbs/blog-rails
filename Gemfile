@@ -87,3 +87,5 @@ gem 'paperclip', '~> 6.0.0'
 
 # Rails 5.2 Active storage requires it to transform images/files
 gem 'mini_magick'
+
+gem 'aasm', '~> 5.1', '>= 5.1.1'
