@@ -21,6 +21,18 @@
     <%= form.text_area :body %>
   </div>
 
+  <div class="attachments">
+    <%= form.label :attachments %>
+    <% @article.attachments.each do |attachment|%>
+      <div>
+        <%= image_tag attachment.variant(resize: '100x100') %>
+        <%= link_to 'Remove', article_delete_attachment_url(@article.id, attachment),
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+  </div>
+
   <%= form.file_field :attachments, multiple: true %>
 
   <div class="actions">

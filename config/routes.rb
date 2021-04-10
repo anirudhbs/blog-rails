@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments
+    delete 'delete_attachment/:id', to: 'articles#delete_attachment', as: :delete_attachment
   end
 end

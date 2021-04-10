@@ -51,6 +51,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def delete_attachment
+    image = ActiveStorage::Attachment.find(params[:id])
+    image.purge
+    respond_to do |format|
+      format.html { redirect_to article_url(params[:article_id]), notice: 'Attachment was successfully destroyed.' }
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_article
