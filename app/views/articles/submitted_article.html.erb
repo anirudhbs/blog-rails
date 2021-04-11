@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Home', root_path %>
+
+<h1>Articles to publish</h1>
+
+<table id="records_table" class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>User</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @articles.each do |article| %>
+    <tr>
+      <td scope="row"><%= article.id %></th>
+      <td><%= article.title %></td>
+      <td><%= article.body %></td>
+      <td><%= article.user.name || article.user.email %></td>
+      <td>
+        <%= link_to 'Show', article %>
+        <%= link_to 'Publish' %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+
