@@ -29,7 +29,7 @@
 <%= render 'comments/form', article: @article %>
 
 <% if @page == 'publish' %>
-  <%= link_to 'Publish', edit_article_path(@article) %>
+  <%= link_to 'Publish', article_publish_path(@article), method: :post %>
 <% elsif @page == 'my-articles' %>
     <%= link_to 'Edit', edit_article_path(@article) %>
 <% end %>

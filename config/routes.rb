@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
     delete 'delete_attachment/:id', to: 'articles#delete_attachment', as: :delete_attachment
+    post 'publish', to: 'articles#publish'
   end
   get 'my/articles', to: 'articles#my_articles'
   get 'articles-to-publish', to: 'articles#submitted_article'

@@ -73,6 +73,14 @@ class ArticlesController < ApplicationController
     @pagy, @articles = pagy(Article.submit)
   end
 
+  def publish
+    article = Article.find(params[:article_id])
+    article.publishing!
+    respond_to do |format|
+      format.html { redirect_to articles_to_publish_url, notice: 'Successfully published an article.' }
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_article
