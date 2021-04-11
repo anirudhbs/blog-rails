@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @pagy, @articles = pagy_countless(Article.all, link_extra: 'data-remote="true"')
+    @pagy, @articles = pagy_countless(Article.publish, link_extra: 'data-remote="true"')
   end
 
   # GET /articles/1
