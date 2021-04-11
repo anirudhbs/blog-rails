@@ -8,7 +8,10 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/1
-  def show; end
+  def show
+    @page = params[:page]
+    @page_back = params[:page_back]
+  end
 
   # GET /articles/new
   def new

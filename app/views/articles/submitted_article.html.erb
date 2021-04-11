@@ -22,7 +22,7 @@
       <td><%= article.body %></td>
       <td><%= article.user.name || article.user.email %></td>
       <td>
-        <%= link_to 'Show', article %>
+        <%= link_to 'Show', article_path(article, page: 'publish', page_back: articles_to_publish_path) %>
         <%= link_to 'Publish' %>
       </td>
     </tr>

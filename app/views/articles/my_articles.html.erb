@@ -21,7 +21,7 @@
       <td><%= article.body %></td>
       <td><%= article.state %></td>
       <td>
-        <%= link_to 'Show', article %>
+        <%= link_to 'Show', article_path(article, page: 'my-articles', page_back: my_articles_path) %>
         <%= link_to 'Edit', edit_article_path(article) %>
         <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
       </td>
