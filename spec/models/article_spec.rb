@@ -21,7 +21,8 @@ RSpec.describe Article, type: :model do
     expect { Article.create!(title: 'abcde', body: 'som') }.to raise_error(ActiveRecord::RecordInvalid)
   end
 
-  it 'Should create article when title and body are valid' do
-    expect(Article.create!(title: 'abcd', body: 'something')).to be_truthy
+  it 'Should create article when title, body and user are valid' do
+    User.create!(id: 1, name: 'Test', email: 'test@gmail.com', password: 'test@123')
+    expect(Article.create!(title: 'abcd', body: 'something', user_id: 1)).to be_truthy
   end
 end
