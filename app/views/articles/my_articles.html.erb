@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Home', root_path %>
+<h1>My Articles</h1>
+
+<table id="records_table" class="table">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>State</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @articles.each do |article| %>
+    <tr>
+      <td scope="row"><%= article.id %></th>
+      <td><%= article.title %></td>
+      <td><%= article.body %></td>
+      <td><%= article.state %></td>
+      <td>
+        <%= link_to 'Show', article %>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Article', new_article_path %>
+
+<%== pagy_nav(@pagy) %>

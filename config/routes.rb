@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :comments
     delete 'delete_attachment/:id', to: 'articles#delete_attachment', as: :delete_attachment
   end
+  get 'my/articles', to: 'articles#my_articles'
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

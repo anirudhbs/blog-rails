@@ -62,6 +62,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def my_articles
+    @pagy, @articles = pagy(Article.where('user_id=?', current_user.id))
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_article
