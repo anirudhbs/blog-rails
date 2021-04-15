@@ -14,7 +14,6 @@ class CreateFlipperTables < ActiveRecord::Migration[5.2]
     end
     add_index :flipper_gates, [:feature_key, :key, :value], unique: true
 
-    Flipper.enable :publish
     Flipper.enable_group :publish, :admins
   end
 

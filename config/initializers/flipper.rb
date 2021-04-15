@@ -5,4 +5,4 @@ Flipper.configure do |config|
   end
 end
 
-Flipper.register(:admin, &:admin?)
+Flipper.register(:admins, &:admin?)
