@@ -5,6 +5,4 @@ Flipper.configure do |config|
   end
 end
 
-Flipper.register(:admins, &:admin?)
-
-Flipper.disable :publish
+Flipper.register(:admin, &:admin?)

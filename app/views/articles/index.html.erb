@@ -23,7 +23,9 @@
 
 <%= link_to 'New Article', new_article_path %>
 <%= link_to 'My Articles', my_articles_path %>
-<%= link_to 'Publish Articles', articles_to_publish_path %>
+<% if Flipper[:publish].enabled? current_user %>
+  <%= link_to 'Publish Articles', articles_to_publish_path %>
+<% end %>
 
 <% content_for :page_scripts do %>
 <script>

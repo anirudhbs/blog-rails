@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   has_many :articles, dependent: :destroy
 
-  enum role: %i[admin user]
+  enum role: { admin: "admin", user: "user" }
 end

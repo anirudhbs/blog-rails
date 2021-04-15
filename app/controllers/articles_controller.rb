@@ -70,7 +70,7 @@ class ArticlesController < ApplicationController
   end
 
   def submitted_article
-    if Flipper.enabled? :publish
+    if Flipper[:publish].enabled? current_user
       @pagy, @articles = pagy(Article.submit)
     else
       redirect_to root_path, notice: 'Feature is disabled'
