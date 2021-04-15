@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'
+
+  mount Flipper::UI.app(Flipper) => '/flipper'
 end
