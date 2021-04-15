@@ -94,3 +94,5 @@ gem 'aasm', '~> 5.1', '>= 5.1.1'
 gem 'sidekiq', '~> 6.2', '>= 6.2.1'
 
 gem 'sidekiq-scheduler'
+
+gem 'flipper-active_record'

@@ -70,7 +70,11 @@ class ArticlesController < ApplicationController
   end
 
   def submitted_article
-    @pagy, @articles = pagy(Article.submit)
+    if Flipper.enabled? :publish
+      @pagy, @articles = pagy(Article.submit)
+    else
+      redirect_to root_path, notice: 'Feature is disabled'
+    end
   end
 
   def publish
