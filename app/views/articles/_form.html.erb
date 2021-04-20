@@ -1,11 +1,11 @@
 <%= form_with(model: article, local: true, html: { multipart: true }) do |form| %>
-  <% if article.errors.any? %>
+  <% if errors %>
     <div id="error_explanation">
-      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <h2><%= pluralize(errors.count, "error") %> prohibited this article from being saved:</h2>
 
       <ul>
-      <% article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% errors.each do |key, messages| %>
+        <li><%= "#{key} #{messages.join(', ')}" %></li>
       <% end %>
       </ul>
     </div>
@@ -23,7 +23,7 @@
 
   <div class="attachments">
     <%= form.label :attachments %>
-    <% @article.attachments.each do |attachment|%>
+    <% article && article.attachments.each do |attachment|%>
       <div>
         <%= image_tag attachment.variant(resize: '100x100') %>
         <%= link_to 'Remove', article_delete_attachment_url(@article.id, attachment),
