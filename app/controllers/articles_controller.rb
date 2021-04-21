@@ -45,11 +45,15 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     respond_to do |format|
-      @article.submitting if params[:state] == 'Submit'
+      contract = Contract::ArticleContract.new
+      validation_result = contract.call(title: article_params[:title], body: article_params[:body])
 
-      if @article.update(article_params)
+      if validation_result.success?
+        @article.submitting if params[:state] == 'Submit'
+        @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
       else
+        @errors = validation_result.errors.to_h
         format.html { render :edit, status: :unprocessable_entity }
       end
     end
