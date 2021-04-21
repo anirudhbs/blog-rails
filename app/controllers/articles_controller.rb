@@ -77,7 +77,8 @@ class ArticlesController < ApplicationController
 
   def submitted_article
     if Flipper[:publish].enabled? current_user
-      @pagy, @articles = pagy(Article.submit)
+      children = User.find(current_user.id).children.select('id').to_a
+      @pagy, @articles = pagy(Article.where('user_id IN (?)', children.each(&:id)))
     else
       redirect_to root_path, notice: 'Feature is disabled'
     end
