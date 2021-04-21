@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_ancestry ancestry_column: :manager_id
+
   has_many :articles, dependent: :destroy
 
   enum role: { admin: "admin", user: "user" }

@@ -46,6 +46,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ancestry (4.0.0)
+      activerecord (>= 5.2.4.5)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
@@ -356,6 +358,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm (~> 5.1, >= 5.1.1)
+  ancestry (~> 4.0)
   bootsnap (>= 1.1.0)
   bootstrap (~> 5.0.0.beta2)
   byebug

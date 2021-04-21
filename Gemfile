@@ -100,3 +100,5 @@ gem 'flipper-active_record'
 gem 'flipper-ui'
 
 gem 'dry-validation', '~> 1.6'
+
+gem 'ancestry', '~> 4.0'
